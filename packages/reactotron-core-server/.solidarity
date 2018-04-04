@@ -1,0 +1,26 @@
+{
+  // I'm JSON5 so I support comments
+  "$schema": "./solidaritySchema.json",
+  "requirements": {
+    "Node": [{ "rule": "cli", "binary": "node" }],
+    "Env Modules": [
+      {
+        "rule": "custom", "plugin": "envinfo", "name": "infoReport",
+        "report": {
+          "npmPackages": [
+            "reactotron-core-server",
+            "reactotron-core-client",
+            "reactotron-apisauce",
+            "reactotron-mst",
+            "reactotron-react-js",
+            "reactotron-react-native",
+            "reactotron-redux",
+            "reactotron-redux-saga",
+            "react",
+            "react-native"
+          ]
+        }
+      }
+    ]
+  }
+}
