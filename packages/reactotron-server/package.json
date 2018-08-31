@@ -8,7 +8,7 @@
     "clean": "rimraf dist build",
     "copy-index": "node scripts/cp-index.js",
     "lint": "tslint -p .",
-    "build:server": "yarn clean && tsc --p tsconfig.server.json && yarn copy-index",
+    "build:server": "yarn clean && tsc --p tsconfig.server.json --skipLibCheck && yarn copy-index",
     "start:server": "yarn build:server && node dist/server/index.js",
     "test": "npm-run-all test:compile && yarn ava",
     "test:watch": "npm-run-all test:compile && yarn ava --watch",

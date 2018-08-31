@@ -41,9 +41,10 @@ test.serial("Does serve react app and apollo pubsub", async t => {
   t.true(responseString.includes("the new home of reactotron"))
 })
 
-test.serial("Does return reactotron current connection details", async t => {
+// After the above, I believe we can run tests in parallel
 
-  // @ts-nocheck
+test("Can query the graphql server and monitor connections", async t => {
+
   const client = new GraphQLClient('http://localhost:4000/graphql')
 
   const query = `{
@@ -55,8 +56,13 @@ test.serial("Does return reactotron current connection details", async t => {
 
   const data = await client.request(query).catch(err => console.log(err))
 
-  console.log(data);
+  // Expect no connections
+  t.deepEqual({
+    connections: []
+  }, data)
 
+
+  // Expect no connections
   t.deepEqual({
     connections: []
   }, data)
