@@ -2,7 +2,6 @@
   "lerna": "2.11.0",
   "version": "2.1.1",
   "npmClient": "yarn",
-  "npmClientArgs": [
-    "--ignore-engines"
-  ]
+  "npmClientArgs": ["--ignore-engines"],
+  "useWorkspaces": true
 }
